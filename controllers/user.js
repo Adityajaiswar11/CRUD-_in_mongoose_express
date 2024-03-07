@@ -24,7 +24,7 @@ const Allusers = async (req, res) => {
   try {
     const data = await User.find();
     if (data.length === 0) {
-      res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
     return res.json(data);
   } catch (err) {
@@ -33,7 +33,6 @@ const Allusers = async (req, res) => {
 };
 
 //update user by given Id
-
 const updataUser = async (req, res) => {
   try {
     const userId = req.params.id;
