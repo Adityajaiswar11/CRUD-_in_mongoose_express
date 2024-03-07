@@ -50,7 +50,6 @@ const updataUser = async (req, res) => {
 };
 
 //delete user by id
-
 const deleteUser = async (req, res) => {
   try {
     const id = req.params.id;
