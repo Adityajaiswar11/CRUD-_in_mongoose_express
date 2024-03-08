@@ -63,4 +63,16 @@ const deleteUser = async (req, res) => {
     return res.status(500) .json({ error: "Internal Server Error", status: false });
   }
 };
-module.exports = { createUser, Allusers, updataUser, deleteUser };
+
+  //Get the user by name query
+  const getUserByQuery = async(req,res)=>{
+    try {
+      const {name} =req.query;
+      const user = await User.find({name:name});
+      if(user.length ===0) return res.status(404) .json({message: "User not found"});
+      return res.status(200).json(user);
+    } catch (error) {
+      return res.status(500) .json({ error: "Internal Server Error "})
+    }
+}
+module.exports = { createUser, Allusers, updataUser, deleteUser ,getUserByQuery};

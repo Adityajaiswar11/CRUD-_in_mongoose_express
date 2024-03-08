@@ -14,8 +14,9 @@ app.use(express.json({ extended: false }));
 app.use(cors());
 
 //connect to the mongoose database
+const database_url = "mongodb://127.0.0.1:27017/crud"
 mongoose
-  .connect("mongodb://127.0.0.1:27017/crud")
+  .connect(database_url)
   .then(() => console.log("Database Connected!"))
   .catch((err) => console.log(err, "Error in database connection"));
 
