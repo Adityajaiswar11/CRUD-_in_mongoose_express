@@ -8,6 +8,6 @@ route.get("/users",Allusers);
 route.post("/create", createUser);
 route.put("/update/:id",updataUser);
 route.delete("/delete/:id",deleteUser);
-route.get("/user/:name?",getUserByQuery)
+route.get("/results:name?",getUserByQuery)
 
 module.exports = {route};
